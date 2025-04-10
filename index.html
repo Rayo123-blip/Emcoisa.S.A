@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emcoisa S.A</title>
+ 
+
+  <!-- USO DE BOOTSTRAP con CDN para estilos modernos y responsivos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+ 
+
+  <!-- USO DE CSS personalizado para mejorar el diseño -->
+  <style>
+    /* ESTILOS GENERALES PERSONALIZADOS */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* USO DE FLEXBOX: alineación de elementos principales en el "hero" */
+    .hero {
+      background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+    }
+
+    .hero-img {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ESTILOS PARA INTERACCIÓN CON BOTONES */
+    .tags button:hover {
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    .project h4 {
+      color: #0d6efd;
+    }
+
+    /* TRANSICIÓN DE TESTIMONIOS (INTERACCIÓN VISUAL) */
+    .testimonial {
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background: linear-gradient(45deg, #0d6efd, #6610f2);
+    }
+
+    .btn-light:hover {
+      background-color: #e2e6ea;
+    }
+
+    /* NUEVOS ESTILOS DORADOS Y AZULES */
+    .text-gold {
+      color: #ffd700;
+    }
+
+    .btn-gold {
+      background-color: #ffd700;
+      color: #fff;
+    }
+
+    .btn-gold:hover {
+      background-color: #e6c200;
+    }
+
+    .border-gold {
+      border-color: #ffd700;
+    }
+
+    .hero-text h2 {
+      color: #0d6efd;
+    }
+
+    .hero-img {
+      background-color: #ffd700;
+      color: #0d6efd;
+    }
+
+    .testimonial-container .testimonial {
+      border-color: #ffd700;
+    }
+  </style>
+  
+</head>
+<body>
+
+  <!-- USO DE FLEXBOX Y BOOTSTRAP: estructura del encabezado -->
+  <header class="bg-white shadow-sm sticky-top p-3 d-flex justify-content-between align-items-center">
+    <!-- Usamos una imagen como ícono en lugar de un ícono de Font Awesome -->
+    <h1 class="h4 text-primary d-flex align-items-center">
+    <img src="C:\Proyectos\Emcoisa.S.A\img\icon.ico" alt="Ícono de Marketing" class="me-2" style="width: 30px; height: 30px;"> <!-- Aquí está el ícono -->
+      Empresa Minera Inca Sayaña
+    </h1>
+
+    <!-- FLEXBOX + BOOTSTRAP: navegación alineada -->
+    <nav class="d-flex gap-3 align-items-center">
+      <a class="text-decoration-none text-dark fw-medium" href="#">Servicios</a>
+      <a class="text-decoration-none text-dark fw-medium" href="#">Portafolio</a>
+      <a class="text-decoration-none text-dark fw-medium" href="#">Clientes</a>
+      <a class="text-decoration-none text-dark fw-medium" href="#">Contacto</a>
+
+      <!-- USO DE JAVASCRIPT: botón que activa un modal -->
+      <button class="btn btn-primary" onclick="toggleModal()">Hablemos</button>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL con FLEXBOX -->
+  <section class="hero d-flex flex-wrap justify-content-between align-items-center p-5">
+    <div class="hero-text flex-fill mb-4">
+      <h2 class="fs-3 fw-semibold text-gold">Impulsando la Mineria Siendo la Primera Empresa Comunitaria del Pais </h2>
+    </div>
+
+    <div class="hero-img bg-white p-4 fw-bold rounded text-center flex-fill" style="max-width:300px; position: relative;">
+        <!-- Agregar imagen aquí -->
+        <img src="C:\Proyectos\Emcoisa.S.A\img\imgMinera.jpg" alt="Imagen de Marketing" class="img-fluid mb-3" style="max-width: 100%;" />
+        
+        <!-- Texto posicionado sobre la imagen -->
+        <div class="text-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+            Lideres<br />En<br />Extraccion de Oro
+        </div>
+    </div>
+
+  <!-- BOTONES CON FLEXBOX + BOOTSTRAP -->
+  <div class="tags d-flex justify-content-between py-4" style="width: 100%;">
+    <button class="btn btn-outline-primary rounded-pill flex-grow-1 mx-2" style="background-color: #007bff; color: white; border-color: #007bff;">Lixiviación con Cianuro</button>
+    <button class="btn btn-outline-secondary rounded-pill flex-grow-1 mx-2" style="background-color: #6c757d; color: white; border-color: #6c757d;">Flotación</button>
+    <button class="btn btn-outline-success rounded-pill flex-grow-1 mx-2" style="background-color: #28a745; color: white; border-color: #28a745;">Amalgamación</button>
+    <button class="btn btn-outline-warning rounded-pill flex-grow-1 mx-2" style="background-color: #ffc107; color: black; border-color: #ffc107;">Cianuración</button>
+    <button class="btn btn-outline-danger rounded-pill flex-grow-1 mx-2" style="background-color: #dc3545; color: white; border-color: #dc3545;">Método Gravimétrico</button>
+  </div>
+  
+  <!-- SECCIÓN DE PROYECTOS -->
+  <section class="projects py-5 bg-white">
+    <!-- FILTROS DE PROYECTOS -->
+    <div class="project-filters d-flex flex-wrap gap-3 justify-content-center mb-4">
+        <button class="btn btn-outline-secondary">Ensayo Fire Assay (Oro y Plata)</button>
+        <button class="btn btn-outline-secondary">Análisis de Fluorescencia (Oro)</button>
+        <button class="btn btn-outline-secondary">Espectrometría de Absorción Atómica (Plata)</button>
+        <button class="btn btn-outline-secondary">Método de Copelación (Plata)</button>
+      </div>
+    <!-- LISTA DE PROYECTOS CON FLEXBOX + BOOTSTRAP -->
+    <div class="project-list row justify-content-center g-4 px-4">
+        <div class="project col-12 col-md-4 bg-light p-4 rounded shadow-sm position-relative">
+          <img src="C:\Proyectos\Emcoisa.S.A\img\lixiviacion.jpg" alt="Lixiviación de oro" class="img-fluid rounded mb-3 project-image">
+          <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white p-3">
+            <h4 class="display-6 text-shadow">Lixiviación de Oro</h4>
+            <p class="lead text-shadow">Un proceso químico para extraer oro de minerales a través de una solución de cianuro.</p>
+          </div>
+          <button class="btn btn-primary mt-2 w-100">Ver más</button>
+        </div>
+        
+        <div class="project col-12 col-md-4 bg-light p-4 rounded shadow-sm position-relative">
+          <img src="C:\Proyectos\Emcoisa.S.A\img\flotacion.jpg" alt="Flotación de oro" class="img-fluid rounded mb-3 project-image">
+          <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white p-3">
+            <h4 class="display-6 text-shadow">Flotación de Oro</h4>
+            <p class="lead text-shadow">Proceso que utiliza la diferencia de densidad para separar el oro de otros minerales.</p>
+          </div>
+          <button class="btn btn-primary mt-2 w-100">Ver más</button>
+        </div>
+        
+        <div class="project col-12 col-md-4 bg-light p-4 rounded shadow-sm position-relative">
+          <img src="C:\Proyectos\Emcoisa.S.A\img\almagamacion.jpg" alt="Amalgamación de oro" class="img-fluid rounded mb-3 project-image">
+          <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white p-3">
+            <h4 class="display-6 text-shadow">Amalgamación de Oro</h4>
+            <p class="lead text-shadow">Proceso en el que el oro se mezcla con mercurio para formar una amalgama.</p>
+          </div>
+          <button class="btn btn-primary mt-2 w-100">Ver más</button>
+        </div>
+      </div>
+      
+
+  <!-- SECCIÓN DE REFERENCIAS -->
+  <section class="references bg-light py-5 text-center">
+    <h3 class="mb-4 text-gold">Referencias</h3>
+
+    <!-- TESTIMONIOS CON FLEXBOX -->
+    <div class="testimonial-container d-flex flex-wrap gap-4 justify-content-center px-4">
+        <div class="testimonial bg-white p-4 border-start border-4 border-gold rounded shadow-sm col-12 col-md-3">
+          <p>"La implementación de procesos de lixiviación ha mejorado significativamente la recuperación del oro en nuestro sitio de trabajo."</p>
+          <p class="text-muted">- Juan Pérez, Gerente de Operaciones, Minera OroReal</p>
+        </div>
+        <div class="testimonial bg-white p-4 border-start border-4 border-gold rounded shadow-sm col-12 col-md-3">
+          <p>"Con la flotación hemos optimizado la separación del oro, aumentando nuestra producción de manera considerable."</p>
+          <p class="text-muted">- Alicia López, Ingeniera de Procesos, Minera OroFino</p>
+        </div>
+        <div class="testimonial bg-white p-4 border-start border-4 border-gold rounded shadow-sm col-12 col-md-3">
+          <p>"La amalgamación, aunque un proceso antiguo, sigue siendo esencial en pequeñas operaciones mineras donde los métodos más avanzados no son viables."</p>
+          <p class="text-muted">- Carlos Díaz, Técnico de Minería, OroMax</p>
+        </div>
+      </div>
+
+  <!-- PIE DE PÁGINA CON FORMULARIO -->
+  <footer class="contact text-white text-center py-5">
+    <h3 class="mb-4 text-gold">Mantente en contacto</h3>
+    
+    <!-- Formulario de suscripción -->
+    <div class="d-flex justify-content-center gap-2 flex-wrap mb-4">
+      <input class="form-control w-auto" type="email" placeholder="Introduce tu correo electrónico" />
+      <button class="btn btn-gold fw-bold">Suscribirse</button>
+    </div>
+  
+    <!-- Iconos de redes sociales -->
+    <div class="d-flex justify-content-center gap-3">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/68323893" target="_blank" class="btn btn-success">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      
+      <!-- Facebook -->
+      <a href="https://www.facebook.com" target="_blank" class="btn btn-primary">
+        <i class="fab fa-facebook"></i>
+      </a>
+  
+      <!-- Correo electrónico -->
+      <a href="mailto:contacto@example.com" class="btn btn-danger">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </footer>
+  
+  <!-- Font Awesome CDN (asegúrate de agregarlo en tu <head>) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+
+  <!-- MODAL CREADO CON HTML Y ESTILIZADO CON CSS Y FLEXBOX -->
+  <div class="modal" id="modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 999; justify-content: center; align-items: center;">
+    <div class="modal-content bg-white p-4 rounded text-center" style="width: 90%; max-width: 400px;">
+      <h4>Contáctanos</h4>
+      <p>¡Nos pondremos en contacto contigo pronto!</p>
+      <!-- BOTÓN QUE CIERRA EL MODAL USANDO JAVASCRIPT -->
+      <button class="btn btn-primary mt-3" onclick="toggleModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT PARA ACTIVAR / DESACTIVAR EL MODAL -->
+  <script>
+    function toggleModal() {
+      const modal = document.getElementById('modal');
+      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+
+  <!-- JAVASCRIPT DE BOOTSTRAP (opcional para otros componentes) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
